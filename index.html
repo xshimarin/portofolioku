@@ -3,625 +3,429 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ramadhani Hidayat — Engineer & Creative Designer</title>
+  <title>Ramadhani Hidayat — Tech × Visual Studio</title>
   
-  <!-- Google Fonts & Font Awesome Icons -->
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            display: ['"Space Grotesk"', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              cyan: '#00f2fe',
-              blue: '#4facfe',
-              violet: '#8b5cf6',
-              dark: '#090d16',
-              card: '#111827',
-              border: 'rgba(255, 255, 255, 0.08)'
-            }
-          },
-          animation: {
-            'blob': 'blob 10s infinite',
-            'float': 'float 5s ease-in-out infinite',
-          },
-          keyframes: {
-            blob: {
-              '0%, 100%': { transform: 'translate(0px, 0px) scale(1)' },
-              '33%': { transform: 'translate(30px, -40px) scale(1.08)' },
-              '66%': { transform: 'translate(-20px, 20px) scale(0.95)' },
-            },
-            float: {
-              '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-8px)' },
-            }
-          }
-        }
-      }
-    }
-  </script>
-
- 
 </head>
 
-<body class="bg-brand-dark text-slate-200 font-sans selection:bg-cyan-500 selection:text-black overflow-x-hidden relative min-h-screen">
+<body class="transition-colors duration-300">
 
-  <!-- Ambient Glowing Background Spheres -->
-  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-    <div class="absolute -top-32 -left-32 w-96 h-96 bg-cyan-600/20 rounded-full blur-[120px] animate-blob"></div>
-    <div class="absolute top-1/3 -right-40 w-96 h-96 bg-violet-600/20 rounded-full blur-[140px] animate-blob animation-delay-2000"></div>
-    <div class="absolute -bottom-40 left-1/4 w-[32rem] h-[32rem] bg-blue-600/15 rounded-full blur-[150px] animate-blob"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_1px,transparent_1px)] [background-size:24px_24px] opacity-70"></div>
-  </div>
-
-  <!-- Navigation Bar -->
-  <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-white/5 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+ <!-- COMIC NAV BAR (CLEAN & LEGA) -->
+  <header class="fixed top-0 left-0 right-0 z-50 comic-nav transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-5 h-20 flex items-center justify-between">
+      
       <!-- Brand Logo -->
       <a href="#home" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 p-[1.5px] transition-transform duration-300 group-hover:scale-105 shadow-lg shadow-cyan-500/20">
-          <div class="w-full h-full bg-brand-dark rounded-[10px] flex items-center justify-center font-display font-bold text-lg text-white">
-            RH
-          </div>
+        <div class="w-11 h-11 rounded-2xl bg-yellow-400 border-3 border-black p-0.5 shadow-[3px_3px_0px_#000] shrink-0 overflow-hidden transform group-hover:rotate-6 transition-transform">
+          <img src="kecil.jpg" alt="Ramadhani" class="w-full h-full object-cover rounded-xl" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80';">
         </div>
         <div class="flex flex-col">
-          <span class="font-display font-bold text-white tracking-wide group-hover:text-cyan-400 transition-colors text-base sm:text-lg">Ramadhani H.</span>
-          <span class="text-[11px] text-slate-400 font-medium tracking-wider uppercase">Informatics &amp; Creative</span>
+          <span id="navBrandName" class="font-comic font-black text-white text-base sm:text-lg tracking-wide group-hover:text-cyan-400 transition-colors">Ramadhani Hidayat</span>
+          <span id="navBrandTagline" class="sub-tagline text-[10px] text-cyan-400 font-bold uppercase tracking-wider font-code">Tech &bull; Design &bull; Cam</span>
         </div>
       </a>
 
-      <!-- Desktop Navigation Links -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-        <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
-        <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
-        <a href="#portfolio" class="hover:text-cyan-400 transition-colors">Showcase</a>
-        <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+      <!-- Desktop Links (Diringkas biar lega) -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-bold">
+        <a href="#about" data-i18n="navAbout" class="hover:text-cyan-400 transition-colors">Tentang</a>
+        <a href="#skills" data-i18n="navSkills" class="hover:text-cyan-400 transition-colors">Keahlian</a>
+        <a href="#portfolio" data-i18n="navWorks" class="hover:text-cyan-400 transition-colors">Karya</a>
+        <a href="#certificates" data-i18n="navCerts" class="hover:text-cyan-400 transition-colors">Sertifikat</a>
+        <a href="#contact" data-i18n="navContact" class="hover:text-cyan-400 transition-colors">Kontak</a>
       </nav>
 
-      <!-- Quick Action / WhatsApp CTA -->
-      <div class="hidden sm:flex items-center gap-4">
-        <a href="https://wa.me/6281234567890?text=Halo%20Ramadhani,%20saya%20tertarik%20untuk%20bekerja%20sama!" target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm font-medium transition-all hover:scale-105 duration-200">
-          <i class="fab fa-whatsapp text-emerald-400 text-base"></i>
-          <span>Let's Talk</span>
+      <!-- Tombol Kanan Ringkas -->
+      <div class="hidden sm:flex items-center gap-2.5">
+        <!-- Switch Bahasa Kotak Mini -->
+        <button id="langSwitchBtn" type="button" class="comic-btn w-9 h-9 rounded-xl bg-purple-400 text-black text-xs font-black flex items-center justify-center hover:scale-105" title="Ganti Bahasa">
+          <span id="langLabel">EN</span>
+        </button>
+
+        <!-- Switch Mode -->
+        <button id="modeSwitchBtn" type="button" class="comic-btn flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-cyan-400 text-black font-black text-xs hover:scale-105">
+          <span id="modeIcon">💻</span>
+          <span id="modeLabel">Tech</span>
+        </button>
+
+        <!-- Icon WhatsApp Mini -->
+        <a href="https://wa.me/6289508313321?text=Halo%20Ramadhani,%20aku%20tertarik%20bekerja%20sama!" target="_blank" rel="noopener noreferrer"
+           class="comic-btn w-9 h-9 rounded-xl bg-emerald-400 text-black flex items-center justify-center text-sm font-black hover:scale-105" title="WhatsApp">
+          <i class="fab fa-whatsapp text-base"></i>
         </a>
       </div>
 
-      <!-- Mobile Hamburger Button -->
-      <button id="mobileMenuBtn" aria-label="Toggle Navigation" class="md:hidden text-slate-300 hover:text-white p-2 focus:outline-none">
-        <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
-      </button>
+      <!-- Tombol Tampilan HP -->
+      <div class="flex items-center gap-2 md:hidden">
+        <button id="mobileLangBtn" type="button" class="comic-btn px-2 py-1 rounded-xl bg-purple-400 text-black text-xs font-black">
+          <span id="mobileLangLabel">EN</span>
+        </button>
+        <button id="mobileModeSwitchBtn" type="button" class="comic-btn px-2.5 py-1 rounded-xl bg-cyan-400 text-black text-xs font-bold">
+          <span id="mobileModeIcon">💻</span>
+        </button>
+        <button id="mobileMenuBtn" aria-label="Toggle Navigation" class="p-2 text-xl focus:outline-none">
+          <i class="fa-solid fa-bars" id="menuIcon"></i>
+        </button>
+      </div>
+
     </div>
 
-    <!-- Mobile Drawer Menu -->
-    <div id="mobileMenu" class="hidden md:hidden px-6 pt-4 pb-6 border-b border-white/10 glass-card">
-      <div class="flex flex-col gap-4 text-base font-medium">
-        <a href="#about" class="mobile-nav-link text-slate-300 hover:text-cyan-400 py-1">Tentang Saya</a>
-        <a href="#skills" class="mobile-nav-link text-slate-300 hover:text-cyan-400 py-1">Keahlian (Skills)</a>
-        <a href="#portfolio" class="mobile-nav-link text-slate-300 hover:text-cyan-400 py-1">Portofolio &amp; Karya</a>
-        <a href="#contact" class="mobile-nav-link text-slate-300 hover:text-cyan-400 py-1">Hubungi</a>
-        <a href="https://wa.me/6281234567890?text=Halo%20Ramadhani,%20saya%20tertarik%20untuk%20bekerja%20sama!" target="_blank"
-           class="flex items-center justify-center gap-2 mt-2 px-4 py-3 rounded-xl bg-emerald-600/30 border border-emerald-500/40 text-emerald-300 font-semibold text-center">
-          <i class="fab fa-whatsapp text-lg"></i>
-          Hubungi di WhatsApp
-        </a>
+    <!-- Menu HP Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden px-6 pt-4 pb-6 comic-nav border-t-2 border-black">
+      <div class="flex flex-col gap-3 font-bold text-sm">
+        <a href="#about" data-i18n="navAbout" class="mobile-nav-link py-1 hover:text-cyan-400">Tentang</a>
+        <a href="#skills" data-i18n="navSkills" class="mobile-nav-link py-1 hover:text-cyan-400">Keahlian</a>
+        <a href="#portfolio" data-i18n="navWorks" class="mobile-nav-link py-1 hover:text-cyan-400">Karya Proyek</a>
+        <a href="#certificates" data-i18n="navCerts" class="mobile-nav-link py-1 hover:text-cyan-400">Sertifikat</a>
+        <a href="#contact" data-i18n="navContact" class="mobile-nav-link py-1 hover:text-cyan-400">Kontak</a>
       </div>
     </div>
   </header>
+       
 
   <main class="pt-24 sm:pt-28">
 
     <!-- HERO SECTION -->
-    <section id="home" class="min-h-[88vh] flex items-center justify-center relative px-5 sm:px-8 py-14">
-      <div class="max-w-5xl mx-auto w-full text-center flex flex-col items-center">
+    <section id="home" class="min-h-[85vh] flex items-center justify-center relative px-5 sm:px-8 py-10">
+      <div class="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
-        <!-- Status Pill -->
-        <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-card border border-white/10 text-xs sm:text-sm font-medium text-slate-300 mb-8 animate-float">
-          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
-          <span class="w-2 h-2 rounded-full bg-emerald-400 -ml-4"></span>
-          <span>Open for Freelance Projects &amp; Collaborations</span>
+        <div class="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start">
+          
+          <div class="comic-btn inline-flex items-center gap-2 px-3.5 py-1 rounded-xl bg-yellow-400 text-black text-xs font-black mb-5 rotate-[-2deg]">
+            <span>⚡</span>
+            <span id="heroBadgeText" data-i18n="heroBadgeTech">Mode Informatika: Siap membangun web &amp; sistem!</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-6xl font-comic font-black tracking-tight leading-[1.15] mb-4">
+            <span data-i18n="heroGreeting">Halo! Aku</span> <br class="hidden sm:inline">
+            <span class="text-cyan-400 drop-shadow-[3px_3px_0px_#000]">Ramadhani Hidayat</span> 👋
+          </h1>
+          
+          <!-- Animated Typewriter -->
+          <div class="text-lg sm:text-2xl font-bold font-code mb-4 h-8 flex items-center justify-center lg:justify-start">
+            <span id="typewriterText" class="text-pink-400"></span><span class="typing-cursor"></span>
+          </div>
+
+          <p id="heroBioDesc" data-i18n="heroBioTech" class="text-sm sm:text-base text-slate-300 max-w-xl mb-8 leading-relaxed font-medium">
+            Mahasiswa Informatika yang merancang sistematis logika pemrograman, sekaligus menjelajah dunia grafis, UI/UX rapi, dan estetika fotografi.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 w-full mb-8">
+            <a href="https://wa.me/6289508313321?text=Halo%20Ramadhani,%20aku%20mau%20ngobrol%20santai%20nih!" 
+               target="_blank" rel="noopener noreferrer"
+               class="comic-btn px-6 py-3.5 rounded-2xl bg-emerald-400 text-black font-black text-sm flex items-center gap-2">
+              <i class="fab fa-whatsapp text-lg"></i>
+              <span data-i18n="btnHeroWa">Ngobrol di WhatsApp</span>
+            </a>
+
+            <a href="#portfolio" 
+               class="comic-btn px-6 py-3.5 rounded-2xl bg-cyan-400 text-black font-black text-sm">
+              <span data-i18n="btnHeroWorks">🚀 Buka Galeri Karya</span>
+            </a>
+          </div>
+
+          <!-- Quick Socials -->
+          <div class="flex items-center gap-3">
+            <a href="https://instagram.com/dhayynaaa" target="_blank" class="comic-btn w-10 h-10 rounded-xl bg-pink-400 text-black flex items-center justify-center" aria-label="Instagram">
+              <i class="fab fa-instagram text-lg"></i>
+            </a>
+            <a href="https://github.com/xshimarin" target="_blank" class="comic-btn w-10 h-10 rounded-xl bg-white text-black flex items-center justify-center" aria-label="GitHub">
+              <i class="fab fa-github text-lg"></i>
+            </a>
+            <a href="mailto:xshimarin@gmail.com" class="comic-btn w-10 h-10 rounded-xl bg-yellow-400 text-black flex items-center justify-center" aria-label="Email">
+              <i class="fa-regular fa-envelope text-lg"></i>
+            </a>
+          </div>
         </div>
 
-        <!-- Big Name & Headlines -->
-        <h1 class="text-4xl sm:text-6xl md:text-7xl font-display font-extrabold text-white tracking-tight leading-[1.15] mb-6">
-          Hi, I'm <span class="custom-gradient-text">Ramadhani Hidayat</span>
-        </h1>
-        
-        <p class="text-lg sm:text-xl md:text-2xl font-light text-slate-300 max-w-3xl leading-relaxed mb-4">
-          <span class="text-cyan-400 font-medium">Informatics Engineer</span> &bull; 
-          <span class="text-indigo-400 font-medium">UI/UX Designer</span> &bull; 
-          <span class="text-violet-400 font-medium">Graphic Designer</span> &bull; 
-          <span class="text-pink-400 font-medium">Photographer</span>
-        </p>
+        <!-- Visual Hero Side (Switchable) -->
+        <div class="lg:col-span-5 flex justify-center relative min-h-[380px] items-center">
 
-        <p class="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-          Menghubungkan ketelitian kode informatika dengan keindahan visual modern. Membangun aplikasi yang fungsional sekaligus merancang identitas grafis yang berkarakter.
-        </p>
+          <!-- 1. TECH HERO VISUAL (Foto Profil Comic Style) -->
+          <div id="techHeroVisual" class="relative w-72 sm:w-80 h-80 sm:h-96">
+            <div class="comic-card w-full h-full p-2.5 overflow-hidden flex items-center justify-center rotate-2">
+              <img src="profile.jpg" alt="Ramadhani Dev"
+                   onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80';"
+                   class="w-full h-full object-cover rounded-xl border-2 border-black">
+            </div>
 
-        <!-- Call to Actions -->
-        <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-5 w-full mb-12">
-          <!-- WhatsApp Primary Button -->
-          <a href="https://wa.me/6281234567890?text=Halo%20Ramadhani,%20saya%20melihat%20portofolio%20kamu%20dan%20ingin%20berdiskusi!" 
-             target="_blank" rel="noopener noreferrer"
-             class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-brand-dark font-bold text-sm tracking-wide shadow-xl shadow-cyan-500/20 hover:shadow-cyan-500/35 transition-all duration-300 hover:-translate-y-0.5">
-            <i class="fab fa-whatsapp text-lg"></i>
-            <span>Chat via WhatsApp</span>
-          </a>
+            <!-- Badges -->
+            <div class="comic-btn absolute -top-4 -left-6 bg-cyan-300 text-black px-3 py-1.5 rounded-xl font-code text-xs font-black rotate-[-6deg] animate-wiggle">
+              💻 &lt;Informatics /&gt;
+            </div>
 
-          <!-- View Works -->
-          <a href="#portfolio" 
-             class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl glass-card hover:bg-white/10 text-white font-semibold text-sm border border-white/15 transition-all duration-300 hover:-translate-y-0.5">
-            <i class="fa-solid fa-layer-group text-cyan-400"></i>
-            <span>Lihat Karya &amp; Proyek</span>
-          </a>
+            <div class="comic-btn absolute -bottom-4 -right-4 bg-pink-400 text-black px-3 py-1.5 rounded-xl font-comic text-xs font-black rotate-[5deg]">
+              📸 Visual Explorer
+            </div>
+          </div>
 
-          <!-- Download CV placeholder -->
-          <a href="#contact" 
-             class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl text-slate-400 hover:text-white text-sm font-medium transition-colors">
-            <i class="fa-solid fa-arrow-down-to-bracket text-xs"></i>
-            <span>Hubungi Saya</span>
-          </a>
+          <!-- 2. CREATIVE HERO VISUAL (Foto Tengah + Poster Melayang Miring) -->
+          <div id="creativeHeroVisual" class="hidden relative w-80 sm:w-96 h-96 flex items-center justify-center">
+            
+            <!-- Poster Kiri -->
+            <div class="comic-card absolute -left-6 sm:-left-8 top-6 w-36 sm:w-44 h-52 sm:h-60 p-1.5 rotate-[-10deg] animate-float-playful z-10 overflow-hidden cursor-pointer">
+              <img src="poster1.jpg" alt="Poster 1" 
+                   onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=600&q=80';"
+                   class="w-full h-full object-cover rounded-lg border border-black">
+              <span class="comic-btn absolute bottom-2 left-2 bg-yellow-300 text-black text-[9px] font-bold px-2 py-0.5 rounded-md">Art #1</span>
+            </div>
+
+            <!-- Foto Tengah -->
+            <div class="comic-card relative w-48 sm:w-56 h-64 sm:h-72 p-2 z-20 hover:scale-105 transition-transform">
+              <img src="profile_creative.jpg" alt="Ramadhani Creative" 
+                   onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80';"
+                   class="w-full h-full object-cover rounded-xl border-2 border-black">
+              <div class="comic-btn absolute -bottom-3 inset-x-4 bg-pink-400 text-black text-[10px] font-black py-1 rounded-lg text-center">
+                ✨ Creative Mind
+              </div>
+            </div>
+
+            <!-- Poster Kanan -->
+            <div class="comic-card absolute -right-6 sm:-right-8 bottom-6 w-36 sm:w-44 h-52 sm:h-60 p-1.5 rotate-[10deg] animate-float-reverse z-10 overflow-hidden cursor-pointer">
+              <img src="poster2.jpg" alt="Poster 2" 
+                   onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80';"
+                   class="w-full h-full object-cover rounded-lg border border-black">
+              <span class="comic-btn absolute bottom-2 right-2 bg-cyan-300 text-black text-[9px] font-bold px-2 py-0.5 rounded-md">Shutter #2</span>
+            </div>
+
+          </div>
+
         </div>
 
-        <!-- Social Media Icons Bar -->
-        <div class="flex items-center justify-center gap-5 sm:gap-6 pt-4 border-t border-white/5 w-full max-w-md">
-          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile" 
-             class="w-11 h-11 rounded-xl glass-card flex items-center justify-center text-slate-400 hover:text-pink-400 hover:border-pink-500/40 hover:scale-110 transition-all duration-200">
-            <i class="fab fa-instagram text-lg"></i>
-          </a>
-          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" 
-             class="w-11 h-11 rounded-xl glass-card flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 hover:scale-110 transition-all duration-200">
-            <i class="fab fa-linkedin-in text-lg"></i>
-          </a>
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" 
-             class="w-11 h-11 rounded-xl glass-card flex items-center justify-center text-slate-400 hover:text-white hover:border-white/40 hover:scale-110 transition-all duration-200">
-            <i class="fab fa-github text-lg"></i>
-          </a>
-          <a href="https://behance.net/" target="_blank" rel="noopener noreferrer" aria-label="Behance Profile" 
-             class="w-11 h-11 rounded-xl glass-card flex items-center justify-center text-slate-400 hover:text-blue-400 hover:border-blue-500/40 hover:scale-110 transition-all duration-200">
-            <i class="fab fa-behance text-lg"></i>
-          </a>
-          <a href="mailto:ramadhani@example.com" aria-label="Email Me" 
-             class="w-11 h-11 rounded-xl glass-card flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:border-emerald-500/40 hover:scale-110 transition-all duration-200">
-            <i class="fa-regular fa-envelope text-lg"></i>
-          </a>
-        </div>
+      </div>
+    </section>
 
+    <!-- KEY STATS STRIP -->
+    <section class="py-6 px-5 border-y-2 border-black/20 bg-black/30">
+      <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        <div class="comic-card p-3">
+          <span class="font-comic font-black text-2xl text-cyan-400">4+</span>
+          <p data-i18n="statPillars" class="text-[11px] font-bold text-slate-300 uppercase">Pilar Bidang</p>
+        </div>
+        <div class="comic-card p-3">
+          <span class="font-comic font-black text-2xl text-pink-400">100%</span>
+          <p data-i18n="statLogic" class="text-[11px] font-bold text-slate-300 uppercase">Fokus Logika</p>
+        </div>
+        <div class="comic-card p-3">
+          <span class="font-comic font-black text-2xl text-yellow-400">&infin;</span>
+          <p data-i18n="statIdeas" class="text-[11px] font-bold text-slate-300 uppercase">Ide Visual</p>
+        </div>
+        <div class="comic-card p-3">
+          <span class="font-comic font-black text-2xl text-emerald-400">24/7</span>
+          <p data-i18n="statCollab" class="text-[11px] font-bold text-slate-300 uppercase">Siap Kolaborasi</p>
+        </div>
       </div>
     </section>
 
     <!-- ABOUT SECTION -->
-    <section id="about" class="py-20 sm:py-28 px-5 sm:px-8 border-t border-white/5 relative">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <section id="about" class="py-20 px-5 sm:px-8 relative">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
-          <!-- Visual Column / Bio Card -->
-          <div class="lg:col-span-5 relative">
-            <div class="relative mx-auto max-w-sm sm:max-w-md">
-              <div class="absolute -inset-2 bg-gradient-to-r from-cyan-500 to-violet-600 rounded-3xl blur-xl opacity-40"></div>
-              <div class="relative glass-card rounded-3xl p-6 sm:p-8 overflow-hidden border border-white/10 shadow-2xl">
-                <!-- Avatar Graphic -->
-                <div class="w-full aspect-square rounded-2xl bg-gradient-to-br from-slate-800 to-brand-dark border border-white/10 flex items-center justify-center relative overflow-hidden group">
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
-                  
-                  <!-- Creative geometric aesthetic in place of default image -->
-                  <div class="text-center p-6 z-20">
-                    <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-center text-cyan-300 text-3xl shadow-inner">
-                      <i class="fa-solid fa-code"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white font-display">Ramadhani Hidayat</h3>
-                    <p class="text-xs text-cyan-400 font-mono tracking-wider mt-1">Informatics Engineering Student</p>
-                  </div>
-
-                  <!-- Floating Tech Badge Elements -->
-                  <div class="absolute top-4 right-4 z-20 px-3 py-1 rounded-full bg-slate-900/80 border border-white/10 text-[11px] font-mono text-violet-300">
-                    <i class="fa-solid fa-camera mr-1"></i> Visuals
-                  </div>
+          <div class="lg:col-span-5">
+            <div class="comic-card p-6 sm:p-8 space-y-4">
+              <div class="flex items-center gap-3">
+                <span class="text-3xl">🎒</span>
+                <div>
+                  <h3 data-i18n="aboutStudentTitle" class="font-comic font-black text-xl text-white">Student Bio</h3>
+                  <p class="text-xs text-cyan-400 font-code">Informatics Major</p>
                 </div>
-
-                <!-- Snapshot Stats -->
-                <div class="grid grid-cols-3 gap-3 mt-6 text-center">
-                  <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5">
-                    <span class="block text-xl font-bold text-white font-display">4+</span>
-                    <span class="text-[11px] text-slate-400">Disiplin Ilmu</span>
-                  </div>
-                  <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5">
-                    <span class="block text-xl font-bold text-cyan-400 font-display">100%</span>
-                    <span class="text-[11px] text-slate-400">Dedikasi</span>
-                  </div>
-                  <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5">
-                    <span class="block text-xl font-bold text-violet-400 font-display">Tech+Art</span>
-                    <span class="text-[11px] text-slate-400">Sinergi</span>
-                  </div>
+              </div>
+              <p data-i18n="aboutStudentDesc" class="text-sm text-slate-300 leading-relaxed">
+                Mempelajari ilmu komputer formal sambil memperdalam minat artistik di rancang antarmuka, layout grafis, serta fotografi jalanan.
+              </p>
+              <div class="grid grid-cols-2 gap-3 pt-2">
+                <div class="comic-btn p-3 rounded-xl bg-purple-400 text-black font-black text-center text-xs">
+                  ⚡ Problem Solver
+                </div>
+                <div class="comic-btn p-3 rounded-xl bg-pink-400 text-black font-black text-center text-xs">
+                  🎨 Visual Sense
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Description Text Column -->
-          <div class="lg:col-span-7 space-y-6">
-            <div class="inline-flex items-center gap-2 text-cyan-400 text-xs font-bold tracking-widest uppercase">
-              <span class="w-8 h-[2px] bg-cyan-400"></span>
-              Tentang Saya
+          <div class="lg:col-span-7 space-y-4">
+            <div class="comic-btn inline-block px-3 py-1 rounded-lg bg-pink-400 text-black text-xs font-black">
+              <span data-i18n="aboutTag">Bukan Sekadar Kode</span>
             </div>
-
-            <h2 class="text-3xl sm:text-4xl font-display font-bold text-white leading-tight">
-              Kombinasi Logika Rekayasa Informatika &amp; Kepekaan Rasa Artistik
+            <h2 data-i18n="aboutHeading" class="text-3xl sm:text-4xl font-comic font-black">
+              Menyatukan Logika Komputasi dan Keindahan Seni
             </h2>
-
-            <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
-              <p>
-                Sebagai mahasiswa jurusan <strong>Informatika (Computer Science / Software Engineering)</strong>, saya terbiasa berpikir runut, menyusun arsitektur sistem, memecahkan persoalan komputasi, dan menulis baris kode yang bersih serta terstruktur.
-              </p>
-              <p>
-                Namun, bagi saya teknologi bukan sekadar logika murni. Lewat minat mendalam di bidang <strong>Graphic Design, UI/UX Design, dan Photography</strong>, saya menyatukan fungsionalitas teknis dengan estetika visual yang bercerita. Setiap antarmuka dirancang ramah pengguna, setiap karya visual memiliki narasi, dan setiap tangkapan kamera menangkap sudut pandang otentik.
-              </p>
-              <p class="text-slate-400">
-                Saya selalu terbuka untuk proyek kolaborasi web development, desain identitas brand / media sosial, maupun dokumentasi fotografi.
-              </p>
-            </div>
-
-            <!-- Bullet Highlights -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div class="flex items-start gap-3 p-3.5 rounded-xl glass-card">
-                <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0">
-                  <i class="fa-solid fa-laptop-code text-sm"></i>
-                </div>
-                <div>
-                  <h4 class="text-sm font-semibold text-white">Software &amp; Web Logic</h4>
-                  <p class="text-xs text-slate-400 mt-0.5">Frontend, database dasar, dan arsitektur web responsif.</p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-3 p-3.5 rounded-xl glass-card">
-                <div class="w-8 h-8 rounded-lg bg-pink-500/20 text-pink-400 flex items-center justify-center shrink-0">
-                  <i class="fa-solid fa-bezier-curve text-sm"></i>
-                </div>
-                <div>
-                  <h4 class="text-sm font-semibold text-white">UI/UX &amp; Graphic Visual</h4>
-                  <p class="text-xs text-slate-400 mt-0.5">Figma prototype, tipografi, layout, &amp; branding media sosial.</p>
-                </div>
-              </div>
-            </div>
-
+            <p data-i18n="aboutP1" class="text-sm sm:text-base text-slate-300 leading-relaxed">
+              Di bangku kuliah informatika, aku belajar merumuskan alur algoritma, menyusun database, dan membangun logika pemrograman yang kokoh.
+            </p>
+            <p data-i18n="aboutP2" class="text-sm sm:text-base text-slate-300 leading-relaxed">
+              Namun di luar itu, mataku selalu tertuju pada komposisi warna, hierarki visual, dan cerita di balik karya grafis maupun jepretan kamera. Keduanya saling melengkapi!
+            </p>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- CORE SKILLS SECTION -->
-    <section id="skills" class="py-20 sm:py-24 px-5 sm:px-8 bg-black/30 border-t border-white/5 relative">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-          <div class="inline-flex items-center gap-2 text-violet-400 text-xs font-bold tracking-widest uppercase mb-3">
-            <span class="w-6 h-[2px] bg-violet-400"></span>
-            Keahlian &amp; Tools
-            <span class="w-6 h-[2px] bg-violet-400"></span>
-          </div>
-          <h2 class="text-3xl sm:text-4xl font-display font-bold text-white">
-            Pilar Kemampuan Utama
-          </h2>
-          <p class="text-slate-400 text-sm mt-3">
-            Perpaduan keahlian rekayasa perangkat lunak dan kepekaan industri kreatif digital.
-          </p>
+    <!-- CORE SKILLS -->
+    <section id="skills" class="py-16 px-5 sm:px-8 relative">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-xl mx-auto mb-12">
+          <h2 data-i18n="skillsTitle" class="text-3xl font-comic font-black mb-2">Alat &amp; Kemampuan Kerja</h2>
+          <p data-i18n="skillsSubtitle" class="text-xs text-slate-400 font-medium">Tools yang sering dipakai untuk coding dan berkarya.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          
-          <!-- Pillar 1: Informatics & Engineering -->
-          <div class="glass-card rounded-2xl p-6 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition-transform">
-                <i class="fa-solid fa-code"></i>
-              </div>
-              <h3 class="text-lg font-bold text-white mb-2 font-display">Informatics / Engineering</h3>
-              <p class="text-xs text-slate-400 leading-relaxed mb-6">
-                Pemahaman fundamental algoritma, struktur data, konsep Object-Oriented, dan web development modern.
-              </p>
-            </div>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-cyan-300 font-mono">HTML/CSS</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-cyan-300 font-mono">JavaScript</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-cyan-300 font-mono">Tailwind</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-cyan-300 font-mono">Git &amp; GitHub</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-cyan-300 font-mono">SQL / DB Basics</span>
-            </div>
+          <div class="comic-card p-5">
+            <span class="text-3xl block mb-3">💻</span>
+            <h3 class="font-comic font-bold text-lg text-cyan-400 mb-1">Informatics</h3>
+            <p data-i18n="skillDescInfo" class="text-xs text-slate-300 mb-4">Algoritma, struktur data, HTML, CSS, JavaScript, Tailwind, Git.</p>
+            <span class="comic-btn px-2 py-0.5 rounded text-[10px] bg-cyan-300 text-black font-bold">Dev Core</span>
           </div>
 
-          <!-- Pillar 2: UI / UX Design -->
-          <div class="glass-card rounded-2xl p-6 hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition-transform">
-                <i class="fa-solid fa-layer-group"></i>
-              </div>
-              <h3 class="text-lg font-bold text-white mb-2 font-display">UI/UX Design</h3>
-              <p class="text-xs text-slate-400 leading-relaxed mb-6">
-                Merancang alur pengguna yang intuitif, wireframing, interactive prototyping, dan sistem desain yang konsisten.
-              </p>
-            </div>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-blue-300 font-mono">Figma</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-blue-300 font-mono">Wireframing</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-blue-300 font-mono">User Flow</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-blue-300 font-mono">Design Systems</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-blue-300 font-mono">Prototyping</span>
-            </div>
+          <div class="comic-card p-5">
+            <span class="text-3xl block mb-3">📱</span>
+            <h3 class="font-comic font-bold text-lg text-blue-400 mb-1">UI/UX Design</h3>
+            <p data-i18n="skillDescUI" class="text-xs text-slate-300 mb-4">Figma, wireframing, alur prototipe, desain sistem antarmuka.</p>
+            <span class="comic-btn px-2 py-0.5 rounded text-[10px] bg-blue-300 text-black font-bold">Interactive</span>
           </div>
 
-          <!-- Pillar 3: Graphic Design -->
-          <div class="glass-card rounded-2xl p-6 hover:border-violet-500/40 transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div class="w-12 h-12 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition-transform">
-                <i class="fa-solid fa-palette"></i>
-              </div>
-              <h3 class="text-lg font-bold text-white mb-2 font-display">Graphic Design</h3>
-              <p class="text-xs text-slate-400 leading-relaxed mb-6">
-                Penciptaan identitas visual, tata letak poster, banner promosi, feeding media sosial, serta seni tipografi.
-              </p>
-            </div>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-violet-300 font-mono">Photoshop</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-violet-300 font-mono">Illustrator</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-violet-300 font-mono">Brand Identity</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-violet-300 font-mono">Typography</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-violet-300 font-mono">Social Kits</span>
-            </div>
+          <div class="comic-card p-5">
+            <span class="text-3xl block mb-3">🎨</span>
+            <h3 class="font-comic font-bold text-lg text-purple-400 mb-1">Graphic Design</h3>
+            <p data-i18n="skillDescDesign" class="text-xs text-slate-300 mb-4">Photoshop, Illustrator, tata letak poster, identitas brand.</p>
+            <span class="comic-btn px-2 py-0.5 rounded text-[10px] bg-purple-300 text-black font-bold">Vector &amp; Print</span>
           </div>
 
-          <!-- Pillar 4: Photography -->
-          <div class="glass-card rounded-2xl p-6 hover:border-pink-500/40 transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition-transform">
-                <i class="fa-solid fa-camera-retro"></i>
-              </div>
-              <h3 class="text-lg font-bold text-white mb-2 font-display">Photography</h3>
-              <p class="text-xs text-slate-400 leading-relaxed mb-6">
-                Komposisi visual, pencahayaan alami/studio, street/portrait capture, dan color grading profesional.
-              </p>
-            </div>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-pink-300 font-mono">Lightroom</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-pink-300 font-mono">Color Grading</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-pink-300 font-mono">Portrait</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-pink-300 font-mono">Street &amp; Urban</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-md bg-white/5 text-pink-300 font-mono">Composition</span>
-            </div>
+          <div class="comic-card p-5">
+            <span class="text-3xl block mb-3">📸</span>
+            <h3 class="font-comic font-bold text-lg text-pink-400 mb-1">Photography</h3>
+            <p data-i18n="skillDescPhoto" class="text-xs text-slate-300 mb-4">Lightroom grading, komposisi street, framing natural.</p>
+            <span class="comic-btn px-2 py-0.5 rounded text-[10px] bg-pink-300 text-black font-bold">Shutter</span>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- PORTFOLIO / SHOWCASE SECTION -->
-    <section id="portfolio" class="py-20 sm:py-28 px-5 sm:px-8 relative">
-      <div class="max-w-7xl mx-auto">
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="py-20 px-5 sm:px-8 relative">
+      <div class="max-w-6xl mx-auto">
         
-        <!-- Header & Category Filters -->
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div class="inline-flex items-center gap-2 text-cyan-400 text-xs font-bold tracking-widest uppercase mb-2">
-              <span class="w-6 h-[2px] bg-cyan-400"></span>
-              Selected Works
+            <div class="comic-btn inline-block px-3 py-1 rounded-lg bg-yellow-400 text-black text-xs font-black mb-2">
+              <span data-i18n="portTag">Koleksi Karya</span>
             </div>
-            <h2 class="text-3xl sm:text-4xl font-display font-bold text-white">
-              Galeri Karya &amp; Proyek
+            <h2 data-i18n="portTitle" class="text-3xl sm:text-4xl font-comic font-black">
+              Galeri Proyek Terpilih
             </h2>
-            <p class="text-slate-400 text-sm mt-2">
-              Jelajahi perpaduan proyek teknis informatika, antarmuka aplikasi, desain grafis, dan jepretan kamera.
-            </p>
           </div>
 
-          <!-- Interactive Category Filter Buttons -->
-          <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 no-scrollbar">
-            <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 active-filter bg-cyan-500 text-brand-dark" data-category="all">
-              Semua
-            </button>
-            <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-300 hover:text-white glass-card hover:bg-white/10 transition-all duration-200" data-category="engineering">
-              Engineering
-            </button>
-            <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-300 hover:text-white glass-card hover:bg-white/10 transition-all duration-200" data-category="uiux">
-              UI/UX
-            </button>
-            <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-300 hover:text-white glass-card hover:bg-white/10 transition-all duration-200" data-category="graphic">
-              Graphic Design
-            </button>
-            <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-300 hover:text-white glass-card hover:bg-white/10 transition-all duration-200" data-category="photo">
-              Photography
-            </button>
+          <!-- Category Filter -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
+          <button class="filter-btn comic-btn px-3.5 py-1.5 rounded-xl text-xs font-black bg-cyan-400 text-black active-filter" data-category="all" data-i18n="filterAll">
+            Semua
+          </button>
+          <button class="filter-btn comic-btn px-3.5 py-1.5 rounded-xl text-xs font-black bg-slate-800 text-white" data-category="engineering" data-i18n="filterDev">
+            Coding
+          </button>
+          <button class="filter-btn comic-btn px-3.5 py-1.5 rounded-xl text-xs font-black bg-slate-800 text-white" data-category="uiux" data-i18n="filterUI">
+           UI/UX
+          </button>
+          <button class="filter-btn comic-btn px-3.5 py-1.5 rounded-xl text-xs font-black bg-slate-800 text-white" data-category="graphic" data-i18n="filterDesign">
+            Desain
+          </button>
+          <!-- Tombol Baru: Logo -->
+          <button class="filter-btn comic-btn px-3.5 py-1.5 rounded-xl text-xs font-black bg-slate-800 text-white" data-category="logo" data-i18n="filterLogo">
+            Logo
+          </button>
+          <button class="filter-btn comic-btn px-3.5 py-1.5 rounded-xl text-xs font-black bg-slate-800 text-white" data-category="photo" data-i18n="filterPhoto">
+            Foto
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+        <!-- Project Grid -->
+        <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <div class="project-card comic-card overflow-hidden cursor-pointer group" data-category="engineering" onclick="openProjectModal('1')">
+            <div class="h-44 bg-slate-900 border-b-2 border-black relative overflow-hidden flex items-center justify-center p-4">
+              <div class="font-code text-xs text-cyan-300">
+                &lt;<span class="text-pink-400">RamadhaniDev</span> /&gt;<br>
+                status: <span class="text-yellow-300">"Production Ready"</span>;
+              </div>
+              <span class="comic-btn absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded bg-cyan-400 text-black">Dev</span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-comic font-bold text-base text-white group-hover:text-cyan-400">Academic Portal System</h3>
+              <p data-i18n="proj1Desc" class="text-xs text-slate-300 mt-1 line-clamp-2">Sistem informasi manajemen perkuliahan terstruktur dan cepat.</p>
+              <div class="flex items-center justify-between mt-4 pt-3 border-t border-white/10 text-xs font-bold text-cyan-400">
+                <span>JavaScript &bull; Web</span>
+                <span data-i18n="lblDetail">Detail &rarr;</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card comic-card overflow-hidden cursor-pointer group" data-category="uiux" onclick="openProjectModal('2')">
+            <div class="h-44 bg-blue-950/60 border-b-2 border-black relative flex items-center justify-center p-4">
+              <span class="text-4xl">📱</span>
+              <span class="comic-btn absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded bg-blue-400 text-black">UI/UX</span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-comic font-bold text-base text-white group-hover:text-blue-400">Fintech Mobile UI</h3>
+              <p data-i18n="proj2Desc" class="text-xs text-slate-300 mt-1 line-clamp-2">Desain antarmuka perbankan modern yang ramah pengguna.</p>
+              <div class="flex items-center justify-between mt-4 pt-3 border-t border-white/10 text-xs font-bold text-blue-400">
+                <span>Figma &bull; Prototype</span>
+                <span data-i18n="lblDetail">Detail &rarr;</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card comic-card overflow-hidden cursor-pointer group" data-category="graphic" onclick="openProjectModal('3')">
+            <div class="h-44 bg-purple-950/60 border-b-2 border-black relative flex items-center justify-center p-4">
+              <span class="text-4xl">🎨</span>
+              <span class="comic-btn absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded bg-purple-400 text-black">Graphic</span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-comic font-bold text-base text-white group-hover:text-purple-400">Event Visual Identity</h3>
+              <p data-i18n="proj3Desc" class="text-xs text-slate-300 mt-1 line-clamp-2">Konsep poster, feed media sosial, dan tipografi festival.</p>
+              <div class="flex items-center justify-between mt-4 pt-3 border-t border-white/10 text-xs font-bold text-purple-400">
+                <span>Vector &bull; Poster</span>
+                <span data-i18n="lblDetail">Detail &rarr;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kartu Proyek Logo (ID: 5) -->
+         <div class="project-card comic-card overflow-hidden cursor-pointer group" data-category="logo" onclick="openProjectModal('5')">
+         <div class="h-44 bg-amber-950/50 border-b-2 border-black relative flex items-center justify-center p-4 overflow-hidden">
+         <!-- Kalau sudah ada file gambar logonya, ganti baris <span> ini dengan <img> ya -->
+            <span class="text-4xl">✒️</span>
+            <span class="comic-btn absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded bg-amber-400 text-black">Logo</span>
+        </div>
+         <div class="p-5">
+          <h3 class="font-comic font-bold text-base text-white group-hover:text-amber-400 transition-colors">Brand Identity &amp; Logo Design</h3>
+          <p class="text-xs text-slate-300 mt-1 line-clamp-2">Perancangan logo dan identitas visual berbasis filosofi modern serta vektor presisi.</p>
+        <div class="flex items-center justify-between mt-4 pt-3 border-t border-white/10 text-xs font-bold text-amber-400">
+             <span>Vector &bull; Branding</span>
+             <span data-i18n="lblDetail">Detail &rarr;</span>
+           </div>
           </div>
         </div>
 
-        <!-- Project Grid -->
-        <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          
-          <!-- ITEM 1: Engineering -->
-          <div class="project-card glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-cyan-500/50 transition-all duration-300 group cursor-pointer"
-               data-category="engineering"
-               onclick="openProjectModal('1')">
-            <div class="h-48 sm:h-52 bg-gradient-to-tr from-slate-900 to-cyan-950/60 relative overflow-hidden flex items-center justify-center p-6">
-              <div class="w-full font-mono text-xs text-cyan-300/80 bg-black/50 p-4 rounded-xl border border-white/5 group-hover:scale-105 transition-transform duration-300">
-                <span class="text-violet-400">const</span> <span class="text-blue-300">system</span> = <span class="text-yellow-300">new</span> <span class="text-emerald-300">InformaticsEngine</span>();<br>
-                system.<span class="text-cyan-200">optimizeAlgorithms</span>({<br>
-                &nbsp;&nbsp;performance: <span class="text-pink-400">'99.9%'</span>,<br>
-                &nbsp;&nbsp;cleanCode: <span class="text-emerald-400">true</span><br>
-                });
-              </div>
-              <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[10px] font-mono tracking-wider uppercase bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">Engineering</span>
+          <div class="project-card comic-card overflow-hidden cursor-pointer group" data-category="photo" onclick="openProjectModal('4')">
+            <div class="h-44 bg-pink-950/60 border-b-2 border-black relative flex items-center justify-center p-4">
+              <span class="text-4xl">📸</span>
+              <span class="comic-btn absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded bg-pink-400 text-black">Photo</span>
             </div>
-            <div class="p-6">
-              <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">Smart Academic System Portal</h3>
-              <p class="text-xs text-slate-400 mt-2 line-clamp-2">Aplikasi manajemen data mahasiswa berbasis web responsif dengan optimasi query dan performa tinggi.</p>
-              <div class="flex items-center justify-between mt-5 pt-4 border-t border-white/5">
-                <div class="flex gap-2">
-                  <span class="text-[10px] font-mono bg-white/5 px-2 py-0.5 rounded text-slate-300">JS / Web</span>
-                  <span class="text-[10px] font-mono bg-white/5 px-2 py-0.5 rounded text-slate-300">Database</span>
-                </div>
-                <span class="text-xs text-cyan-400 font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                  Detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- ITEM 2: UI/UX -->
-          <div class="project-card glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-blue-500/50 transition-all duration-300 group cursor-pointer"
-               data-category="uiux"
-               onclick="openProjectModal('2')">
-            <div class="h-48 sm:h-52 bg-gradient-to-tr from-slate-900 to-indigo-950/70 relative overflow-hidden flex items-center justify-center p-6">
-              <!-- UI Mockup SVG representation -->
-              <div class="w-4/5 h-32 rounded-xl bg-slate-800/90 border border-white/15 p-3 flex flex-col justify-between shadow-2xl group-hover:scale-105 transition-transform duration-300">
-                <div class="flex items-center justify-between">
-                  <div class="w-12 h-2.5 rounded-full bg-blue-400/60"></div>
-                  <div class="w-4 h-4 rounded-full bg-cyan-400/40"></div>
-                </div>
-                <div class="space-y-1.5">
-                  <div class="w-full h-2 rounded bg-white/20"></div>
-                  <div class="w-3/4 h-2 rounded bg-white/10"></div>
-                </div>
-                <div class="grid grid-cols-3 gap-2">
-                  <div class="h-5 rounded bg-blue-500/30"></div>
-                  <div class="h-5 rounded bg-purple-500/30"></div>
-                  <div class="h-5 rounded bg-emerald-500/30"></div>
-                </div>
-              </div>
-              <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[10px] font-mono tracking-wider uppercase bg-blue-500/20 text-blue-300 border border-blue-500/30">UI / UX</span>
-            </div>
-            <div class="p-6">
-              <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">Fintech Mobile App Redesign</h3>
-              <p class="text-xs text-slate-400 mt-2 line-clamp-2">Perancangan ulang antarmuka aplikasi perbankan modern dengan fokus pada kemudahan transfer dan visual hierarki.</p>
-              <div class="flex items-center justify-between mt-5 pt-4 border-t border-white/5">
-                <div class="flex gap-2">
-                  <span class="text-[10px] font-mono bg-white/5 px-2 py-0.5 rounded text-slate-300">Figma</span>
-                  <span class="text-[10px] font-mono bg-white/5 px-2 py-0.5 rounded text-slate-300">Mobile UI</span>
-                </div>
-                <span class="text-xs text-blue-400 font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                  Detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- ITEM 3: Graphic Design -->
-          <div class="project-card glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-violet-500/50 transition-all duration-300 group cursor-pointer"
-               data-category="graphic"
-               onclick="openProjectModal('3')">
-            <div class="h-48 sm:h-52 bg-gradient-to-tr from-slate-900 via-purple-950/40 to-black relative overflow-hidden flex items-center justify-center p-6">
-              <div class="text-center group-hover:scale-105 transition-transform duration-300">
-                <span class="font-display font-black text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400 tracking-tighter">
-                  NEXUS 26
-                </span>
-                <p class="text-[11px] font-mono tracking-widest text-violet-300 uppercase mt-1">Creative Fest Poster Identity</p>
-              </div>
-              <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[10px] font-mono tracking-wider uppercase bg-violet-500/20 text-violet-300 border border-violet-500/30">Graphic</span>
-            </div>
-            <div class="p-6">
-              <h3 class="text-lg font-bold text-white group-hover:text-violet-400 transition-colors">Visual Branding &amp; Event Identity</h3>
-              <p class="text-xs text-slate-400 mt-2 line-clamp-2">Identitas grafis menyeluruh untuk festival teknologi kampus termasuk poster, merchandise, dan feed Instagram.</p>
-              <div class="flex items-center justify-between mt-5 pt-4 border-t border-white/5">
-                <div class="flex gap-2">
-                  <span class="text-[10px] font-mono bg-white/5 px-2 py-0.5 rounded text-slate-300">Photoshop</span>
-                  <span class="text-[10px] font-mono bg-white/5 px-2 py-0.5 rounded text-slate-300">Branding</span>
-                </div>
-                <span class="text-xs text-violet-400 font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                  Detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- ITEM 4: Photography -->
-          <div class="project-card glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-pink-500/50 transition-all duration-300 group cursor-pointer"
-               data-category="photo"
-               onclick="openProjectModal('4')">
-            <div class="h-48 sm:h-52 bg-gradient-to-tr from-slate-950 via-slate-900 to-amber-950/40 relative overflow-hidden flex items-center justify-center p-6">
-              <div class="relative w-full h-full rounded-xl overflow-hidden border border-white/10 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40"></div>
-                <i class="fa-solid fa-camera text-4xl text-white/30"></i>
-                <div class="absolute bottom-2 left-3 right-3 text-left">
-                  <span class="text-xs font-semibold text-white/90">Urban Monochromes &amp; Street</span>
-                </div>
-              </div>
-              <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[10px] font-mono tracking-wider uppercase bg-pink-500/20 text-pink-300 border border-pink-500/30">Photo</span>
-            </div>
-            <div class="p-6">
-              <h3 class="text-lg font-bold text-white group-hover:text-pink-400 transition-colors">Street &amp; Urban Stories</h3>
-              <p class="text-xs text-slate-400 mt-2 line-clamp-2">Eksplorasi visual ritme kehidupan kota, pemanfaatan natural lighting, dan komposisi bayangan dramatis.</p>
-              <div class="flex items-center justify-between mt-5 pt-4 border-t border-white/5">
-                <div class="flex gap-2">
-                  <span class="text-[10px] font-mono bg-white/5 px-2 py-0.5 rounded text-slate-300">Lightroom</span>
-                  <span class="text-[10px] font-mono bg-white/5 px-2 py-0.5 rounded text-slate-300">Sony Alpha</span>
-                </div>
-                <span class="text-xs text-pink-400 font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                  Detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- ITEM 5: UI/UX + Engineering -->
-          <div class="project-card glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-cyan-500/50 transition-all duration-300 group cursor-pointer"
-               data-category="uiux"
-               onclick="openProjectModal('5')">
-            <div class="h-48 sm:h-52 bg-gradient-to-tr from-slate-900 to-emerald-950/50 relative overflow-hidden flex items-center justify-center p-6">
-              <div class="w-full text-center group-hover:scale-105 transition-transform duration-300">
-                <i class="fa-solid fa-chart-pie text-4xl text-emerald-400 mb-2"></i>
-                <p class="text-xs font-mono text-emerald-300">SaaS Analytics Dashboard</p>
-              </div>
-              <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[10px] font-mono tracking-wider uppercase bg-blue-500/20 text-blue-300 border border-blue-500/30">UI / UX</span>
-            </div>
-            <div class="p-6">
-              <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">Analytics Web Dashboard Kit</h3>
-              <p class="text-xs text-slate-400 mt-2 line-clamp-2">Desain antarmuka dashboard data visualisasi dengan pendekatan dark mode ramah mata dan komponen modular.</p>
-              <div class="flex items-center justify-between mt-5 pt-4 border-t border-white/5">
-                <div class="flex gap-2">
-                  <span class="text-[10px] font-mono bg-white/5 px-2 py-0.5 rounded text-slate-300">Figma</span>
-                  <span class="text-[10px] font-mono bg-white/5 px-2 py-0.5 rounded text-slate-300">Dashboard</span>
-                </div>
-                <span class="text-xs text-cyan-400 font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                  Detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- ITEM 6: Graphic Design -->
-          <div class="project-card glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-violet-500/50 transition-all duration-300 group cursor-pointer"
-               data-category="graphic"
-               onclick="openProjectModal('6')">
-            <div class="h-48 sm:h-52 bg-gradient-to-tr from-slate-900 to-fuchsia-950/50 relative overflow-hidden flex items-center justify-center p-6">
-              <div class="grid grid-cols-2 gap-3 w-full group-hover:scale-105 transition-transform duration-300">
-                <div class="h-24 rounded-lg bg-fuchsia-500/20 border border-fuchsia-500/30 flex items-center justify-center">
-                  <span class="text-xs font-mono text-fuchsia-200">Carousel 1</span>
-                </div>
-                <div class="h-24 rounded-lg bg-violet-500/20 border border-violet-500/30 flex items-center justify-center">
-                  <span class="text-xs font-mono text-violet-200">Carousel 2</span>
-                </div>
-              </div>
-              <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[10px] font-mono tracking-wider uppercase bg-violet-500/20 text-violet-300 border border-violet-500/30">Graphic</span>
-            </div>
-            <div class="p-6">
-              <h3 class="text-lg font-bold text-white group-hover:text-violet-400 transition-colors">Social Media Creative Campaign</h3>
-              <p class="text-xs text-slate-400 mt-2 line-clamp-2">Rangkaian konten carousel edukatif &amp; promosi produk digital dengan tipografi tegas dan engagement tinggi.</p>
-              <div class="flex items-center justify-between mt-5 pt-4 border-t border-white/5">
-                <div class="flex gap-2">
-                  <span class="text-[10px] font-mono bg-white/5 px-2 py-0.5 rounded text-slate-300">Illustrator</span>
-                  <span class="text-[10px] font-mono bg-white/5 px-2 py-0.5 rounded text-slate-300">Instagram</span>
-                </div>
-                <span class="text-xs text-violet-400 font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                  Detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                </span>
+            <div class="p-5">
+              <h3 class="font-comic font-bold text-base text-white group-hover:text-pink-400">Street Photography Collection</h3>
+              <p data-i18n="proj4Desc" class="text-xs text-slate-300 mt-1 line-clamp-2">Tangkap sudut kehidupan perkotaan dengan pencahayaan alami.</p>
+              <div class="flex items-center justify-between mt-4 pt-3 border-t border-white/10 text-xs font-bold text-pink-400">
+                <span>Color Grading &bull; Raw</span>
+                <span data-i18n="lblDetail">Detail &rarr;</span>
               </div>
             </div>
           </div>
@@ -630,122 +434,194 @@
       </div>
     </section>
 
-    <!-- CONTACT & SOCIAL SECTION -->
-    <section id="contact" class="py-20 sm:py-28 px-5 sm:px-8 border-t border-white/5 relative">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          
-          <!-- Contact Left: Bio & Direct WA Connect -->
-          <div class="lg:col-span-5 space-y-6">
-            <div class="inline-flex items-center gap-2 text-cyan-400 text-xs font-bold tracking-widest uppercase">
-              <span class="w-6 h-[2px] bg-cyan-400"></span>
-              Mari Terhubung
+    <!-- NEW SECTION: JOURNEY & EXPERIENCE -->
+    <section id="journey" class="py-16 px-5 sm:px-8 relative border-t-2 border-black/20">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <div class="comic-btn inline-block px-3 py-1 rounded-lg bg-cyan-400 text-black text-xs font-black mb-2">
+            Timeline Panel
+          </div>
+          <h2 data-i18n="journeyTitle" class="text-3xl font-comic font-black">
+            Perjalanan Kuliah &amp; Kreasi
+          </h2>
+        </div>
+
+        <div class="space-y-6">
+          <div class="comic-card p-5 relative border-l-8 border-l-cyan-400">
+            <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-1 mb-2">
+              <h3 class="font-comic font-bold text-lg text-white">Mahasiswa Teknik Informatika</h3>
+              <span class="comic-btn px-2 py-0.5 rounded text-[10px] bg-yellow-300 text-black font-bold w-fit">2025 — Sekarang</span>
             </div>
-            <h2 class="text-3xl sm:text-4xl font-display font-bold text-white">
-              Punya ide atau proyek seru? Mari wujudkan bersama.
-            </h2>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Kamu bisa menghubungi saya langsung untuk diskusi desain grafis, perancangan web informatika, UI/UX, maupun sesi fotografi. Fast response via WhatsApp!
+            <p data-i18n="journeyDesc1" class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Fokus mendalami algoritma komputasi, web frontend logic, basis data relasional, dan arsitektur kode terstruktur.
             </p>
-
-            <!-- WhatsApp Card Highlight -->
-            <div class="p-5 rounded-2xl bg-gradient-to-br from-emerald-950/40 to-slate-900 border border-emerald-500/30 shadow-xl">
-              <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl shrink-0">
-                  <i class="fab fa-whatsapp"></i>
-                </div>
-                <div>
-                  <h4 class="text-base font-bold text-white">Chat Langsung di WhatsApp</h4>
-                  <p class="text-xs text-slate-400 mt-1 mb-3">Tanyakan apa saja seputar portofolio, tawaran freelance, atau sekadar bertukar ide.</p>
-                  <a href="https://wa.me/6281234567890?text=Halo%20Ramadhani,%20saya%20tertarik%20bekerja%20sama%20dengan%20kamu." 
-                     target="_blank" rel="noopener noreferrer"
-                     class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-brand-dark text-xs font-bold transition-all hover:scale-105 duration-200 shadow-md shadow-emerald-500/20">
-                    <span>Mulai Chat Sekarang</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Social Links Details -->
-            <div class="space-y-3 pt-2">
-              <a href="https://instagram.com/" target="_blank" class="flex items-center justify-between p-3.5 rounded-xl glass-card hover:border-pink-500/40 text-slate-300 hover:text-white transition-all">
-                <div class="flex items-center gap-3">
-                  <i class="fab fa-instagram text-pink-400 text-lg"></i>
-                  <span class="text-sm font-medium">Instagram: @ramadhanihdyt</span>
-                </div>
-                <i class="fa-solid fa-arrow-right text-xs text-slate-500"></i>
-              </a>
-
-              <a href="https://linkedin.com/" target="_blank" class="flex items-center justify-between p-3.5 rounded-xl glass-card hover:border-blue-500/40 text-slate-300 hover:text-white transition-all">
-                <div class="flex items-center gap-3">
-                  <i class="fab fa-linkedin-in text-blue-400 text-lg"></i>
-                  <span class="text-sm font-medium">LinkedIn: Ramadhani Hidayat</span>
-                </div>
-                <i class="fa-solid fa-arrow-right text-xs text-slate-500"></i>
-              </a>
-
-              <a href="https://github.com/" target="_blank" class="flex items-center justify-between p-3.5 rounded-xl glass-card hover:border-white/40 text-slate-300 hover:text-white transition-all">
-                <div class="flex items-center gap-3">
-                  <i class="fab fa-github text-white text-lg"></i>
-                  <span class="text-sm font-medium">GitHub: Ramadhani-Informatics</span>
-                </div>
-                <i class="fa-solid fa-arrow-right text-xs text-slate-500"></i>
-              </a>
-            </div>
-
           </div>
 
-          <!-- Contact Right: Interactive Inquiry Form -->
-          <div class="lg:col-span-7">
-            <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 shadow-2xl relative">
-              <h3 class="text-xl font-bold text-white font-display mb-1">Kirim Pesan Cepat</h3>
-              <p class="text-xs text-slate-400 mb-6">Pesan ini juga bisa langsung dialihkan ke obrolan WhatsApp kamu.</p>
+          <div class="comic-card p-5 relative border-l-8 border-l-pink-400">
+            <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-1 mb-2">
+              <h3 class="font-comic font-bold text-lg text-white">Freelance Visual &amp; UI Designer</h3>
+              <span class="comic-btn px-2 py-0.5 rounded text-[10px] bg-pink-300 text-black font-bold w-fit">2025 — Sekarang</span>
+            </div>
+            <p data-i18n="journeyDesc2" class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Mengerjakan identitas poster acara, feeding konten carousel media sosial, dan prototipe antarmuka Figma untuk klien independen.
+            </p>
+          </div>
 
-              <form id="contactForm" class="space-y-4">
+          <div class="comic-card p-5 relative border-l-8 border-l-purple-400">
+            <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-1 mb-2">
+              <h3 class="font-comic font-bold text-lg text-white">Street &amp; Event Photographer</h3>
+              <span class="comic-btn px-2 py-0.5 rounded text-[10px] bg-purple-300 text-black font-bold w-fit">2025 — Sekarang</span>
+            </div>
+            <p data-i18n="journeyDesc3" class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Eksplorasi dokumentasi visual perkotaan, permainan bayangan dan kontras, serta proses color grading di Adobe Lightroom.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES & CREDENTIALS -->
+    <section id="certificates" class="py-16 px-5 sm:px-8 relative border-t-2 border-black/20">
+      <div class="max-w-6xl mx-auto">
+        
+        <div class="text-center max-w-xl mx-auto mb-12">
+          <div class="comic-btn inline-block px-3 py-1 rounded-lg bg-emerald-400 text-black text-xs font-black mb-2">
+            <span data-i18n="certTag">Pencapaian &amp; Kredensial</span>
+          </div>
+          <h2 data-i18n="certTitle" class="text-3xl font-comic font-black">
+            Sertifikat &amp; Lisensi
+          </h2>
+          <p data-i18n="certSubtitle" class="text-xs text-slate-400 font-medium mt-1">Bukti dedikasi pembelajaran di bidang teknologi dan desain.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <div class="comic-card p-5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-2xl">📜</span>
+                <span class="comic-btn px-2 py-0.5 rounded text-[10px] bg-yellow-300 text-black font-bold">2026</span>
+              </div>
+              <h3 class="font-comic font-bold text-base text-white mb-1">Web Development Fundamental</h3>
+              <p class="text-xs text-slate-400 mb-2">Penerbit: Dicoding / Tech Academy</p>
+              <p data-i18n="certDesc1" class="text-xs text-slate-300 leading-relaxed">
+                Pemahaman standar arsitektur web modern, semantic HTML5, responsive CSS, dan dasar JavaScript.
+              </p>
+            </div>
+            <div class="pt-4 mt-3 border-t border-white/10 flex justify-between items-center text-xs">
+              <span class="text-slate-400 font-code text-[11px]">ID: CERT-WD-091</span>
+              <span class="font-bold text-cyan-400 cursor-pointer hover:underline" data-i18n="lblVerify">Terverifikasi &check;</span>
+            </div>
+          </div>
+
+          <div class="comic-card p-5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-2xl">🎨</span>
+                <span class="comic-btn px-2 py-0.5 rounded text-[10px] bg-yellow-300 text-black font-bold">2025</span>
+              </div>
+              <h3 class="font-comic font-bold text-base text-white mb-1">UI/UX Design Track: Figma Master</h3>
+              <p class="text-xs text-slate-400 mb-2">Penerbit: Design Interaction Platform</p>
+              <p data-i18n="certDesc2" class="text-xs text-slate-300 leading-relaxed">
+                Perancangan user journey, sistem komponen fleksibel, autolayout tingkat lanjut, dan prototipe interaktif.
+              </p>
+            </div>
+            <div class="pt-4 mt-3 border-t border-white/10 flex justify-between items-center text-xs">
+              <span class="text-slate-400 font-code text-[11px]">ID: CERT-UIUX-442</span>
+              <span class="font-bold text-blue-400 cursor-pointer hover:underline" data-i18n="lblVerify">Terverifikasi &check;</span>
+            </div>
+          </div>
+
+          <div class="comic-card p-5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-2xl">💡</span>
+                <span class="comic-btn px-2 py-0.5 rounded text-[10px] bg-yellow-300 text-black font-bold">2025</span>
+              </div>
+              <h3 class="font-comic font-bold text-base text-white mb-1">Database &amp; SQL Query Logic</h3>
+              <p class="text-xs text-slate-400 mb-2">Penerbit: Database Academy</p>
+              <p data-i18n="certDesc3" class="text-xs text-slate-300 leading-relaxed">
+                Perancangan skema relasional, optimasi kueri data, dan manipulasi basis data terstruktur.
+              </p>
+            </div>
+            <div class="pt-4 mt-3 border-t border-white/10 flex justify-between items-center text-xs">
+              <span class="text-slate-400 font-code text-[11px]">ID: CERT-SQL-788</span>
+              <span class="font-bold text-emerald-400 cursor-pointer hover:underline" data-i18n="lblVerify">Terverifikasi &check;</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 px-5 sm:px-8 relative border-t-2 border-black/20">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <div class="lg:col-span-5 space-y-4">
+            <div class="comic-btn inline-block px-3 py-1 rounded-lg bg-pink-400 text-black text-xs font-black">
+              <span data-i18n="contactTag">Kontak Langsung</span>
+            </div>
+            <h2 data-i18n="contactTitle" class="text-3xl font-comic font-black">Mari Berkolaborasi!</h2>
+            <p data-i18n="contactDesc" class="text-sm text-slate-300 leading-relaxed">
+              Mau bikin website, diskusi layout Figma, minta tolong poster desain, atau sekadar bertukar sapa? Pintu obrolan selalu terbuka.
+            </p>
+            
+            <div class="comic-card p-5 bg-emerald-950/40 border-emerald-400 mt-4">
+              <h4 data-i18n="contactWaTitle" class="font-comic font-bold text-emerald-300 text-sm">Respon Paling Cepat</h4>
+              <p data-i18n="contactWaDesc" class="text-xs text-slate-300 mt-1 mb-3">Langsung terhubung ke nomor WhatsApp pribadiku.</p>
+              <a href="https://wa.me/6289508313321" target="_blank" 
+                 class="comic-btn inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-400 text-black font-black text-xs">
+                <i class="fab fa-whatsapp"></i> <span data-i18n="btnChat">Chat WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7">
+            <div class="comic-card p-6 sm:p-8">
+              <h3 data-i18n="formTitle" class="font-comic font-black text-xl mb-4">Kirim Pesan Instan</h3>
+              <form id="contactForm" class="space-y-4 text-xs font-bold">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label class="block text-xs font-medium text-slate-300 mb-1.5" for="senderName">Nama Lengkap</label>
-                    <input type="text" id="senderName" required placeholder="Contoh: Budi Santoso"
-                           class="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-400 transition-colors">
+                    <label class="block mb-1.5" for="senderName" data-i18n="formLabelName">Nama Kamu</label>
+                    <input type="text" id="senderName" required placeholder="Tulis namamu..."
+                           class="w-full p-3 rounded-xl bg-slate-900 border-2 border-black text-white focus:outline-none focus:border-cyan-400 font-medium">
                   </div>
                   <div>
-                    <label class="block text-xs font-medium text-slate-300 mb-1.5" for="senderCategory">Kebutuhan Proyek</label>
-                    <select id="senderCategory" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-white/10 text-white text-sm focus:outline-none focus:border-cyan-400 transition-colors">
-                      <option value="Informatika & Web Development">Informatika / Web Dev</option>
-                      <option value="UI/UX Design App">UI/UX Design</option>
-                      <option value="Graphic Design & Branding">Graphic Design &amp; Branding</option>
-                      <option value="Photography Session">Photography</option>
-                      <option value="Lainnya">Lainnya / Kolaborasi</option>
+                    <label class="block mb-1.5" for="senderCategory" data-i18n="formLabelTopic">Kategori</label>
+                    <select id="senderCategory" class="w-full p-3 rounded-xl bg-slate-900 border-2 border-black text-white focus:outline-none focus:border-cyan-400 font-medium">
+                      <option value="Proyek Web / Coding">Web Dev / Coding</option>
+                      <option value="Desain UI/UX">UI/UX Design</option>
+                      <option value="Graphic Design">Graphic Design</option>
+                      <option value="Photography">Photography</option>
+                      <option value="Ngobrol Santai">Lainnya / Ngobrol</option>
                     </select>
                   </div>
                 </div>
 
                 <div>
-                  <label class="block text-xs font-medium text-slate-300 mb-1.5" for="senderEmail">Email / Kontak</label>
-                  <input type="text" id="senderEmail" required placeholder="email@domain.com atau no. telp"
-                         class="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-400 transition-colors">
+                  <label class="block mb-1.5" for="senderEmail" data-i18n="formLabelContact">Email / Kontak</label>
+                  <input type="text" id="senderEmail" required placeholder="Email atau nomor HP..."
+                           class="w-full p-3 rounded-xl bg-slate-900 border-2 border-black text-white focus:outline-none focus:border-cyan-400 font-medium">
                 </div>
 
                 <div>
-                  <label class="block text-xs font-medium text-slate-300 mb-1.5" for="senderMessage">Deskripsi Pesan</label>
-                  <textarea id="senderMessage" rows="4" required placeholder="Tuliskan detail ide atau kebutuhan proyekmu di sini..."
-                            class="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-400 transition-colors resize-none"></textarea>
+                  <label class="block mb-1.5" for="senderMessage" data-i18n="formLabelMsg">Pesan</label>
+                  <textarea id="senderMessage" rows="4" required placeholder="Tuliskan apa yang ingin kamu diskusikan..."
+                            class="w-full p-3 rounded-xl bg-slate-900 border-2 border-black text-white focus:outline-none focus:border-cyan-400 font-medium resize-none"></textarea>
                 </div>
 
-                <!-- Submit Button -->
                 <button type="submit" 
-                        class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600 hover:opacity-95 text-white font-bold text-sm tracking-wide shadow-lg shadow-cyan-500/20 transition-all duration-200 flex items-center justify-center gap-2">
-                  <i class="fa-solid fa-paper-plane text-xs"></i>
-                  <span>Kirim Pesan ke WhatsApp Ramadhani</span>
+                        class="comic-btn w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-400 text-black font-black text-sm">
+                  🚀 <span data-i18n="btnSendWa">Kirimkan Pesan ke WhatsApp</span>
                 </button>
               </form>
 
-              <!-- Feedback alert box -->
-              <div id="formFeedback" class="hidden mt-4 p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs text-center">
-                Membuka WhatsApp untuk mengirim pesan Anda...
+              <div id="formFeedback" class="hidden mt-4 p-3 rounded-xl bg-emerald-400/20 text-emerald-300 text-xs font-bold text-center">
+                Membuka obrolan WhatsApp...
               </div>
-
             </div>
           </div>
 
@@ -756,63 +632,43 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="py-8 border-t border-white/5 bg-black/50 text-center text-xs text-slate-500">
-    <div class="max-w-7xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2 text-slate-400">
-        <span class="font-bold text-white font-display">Ramadhani Hidayat</span> &copy; <span id="currentYear"></span>. All rights reserved.
-      </div>
-      <p class="text-slate-500">
-        Designed &amp; Engineered with Passion for Code &amp; Visual Art.
-      </p>
+  <footer class="py-8 border-t-2 border-black bg-slate-950 text-center text-xs text-slate-400">
+    <div class="max-w-6xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="font-bold text-white">&copy; <span id="currentYear"></span> Ramadhani Hidayat. Crafted with comic energy &amp; pure code.</p>
+      <a href="#home" class="comic-btn px-3 py-1 rounded-lg bg-yellow-400 text-black font-black">
+        <span data-i18n="btnBackTop">Kembali ke Atas &uarr;</span>
+      </a>
     </div>
   </footer>
 
-  <!-- PROJECT DETAIL MODAL -->
-  <div id="projectModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-opacity duration-300">
-    <div class="glass-card max-w-2xl w-full rounded-3xl p-6 sm:p-8 border border-white/15 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-      
-      <!-- Close Button -->
-      <button onclick="closeProjectModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white flex items-center justify-center text-sm transition-colors">
-        <i class="fa-solid fa-xmark"></i>
+  <!-- POPUP DETAIL MODAL -->
+  <div id="projectModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    <div class="comic-card max-w-xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+      <button onclick="closeProjectModal()" class="comic-btn absolute top-4 right-4 w-8 h-8 rounded-full bg-pink-400 text-black font-black flex items-center justify-center">
+        &times;
       </button>
 
-      <!-- Modal Category & Title -->
-      <div id="modalCategoryBadge" class="inline-block px-2.5 py-1 rounded-md text-[10px] font-mono tracking-wider uppercase mb-3 bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
-        Engineering
-      </div>
-      <h3 id="modalTitle" class="text-2xl font-bold font-display text-white mb-2">Project Title</h3>
+      <span id="modalCategoryBadge" class="comic-btn inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-cyan-400 text-black mb-2">Category</span>
+      <h3 id="modalTitle" class="font-comic font-black text-2xl text-white mb-3">Project Title</h3>
       
-      <!-- Visual preview area in modal -->
-      <div id="modalPreviewBox" class="w-full h-48 sm:h-60 rounded-2xl my-4 bg-slate-900 border border-white/10 flex items-center justify-center text-slate-500">
-        <!-- Injected via JS -->
+      <div id="modalPreviewBox" class="w-full h-44 rounded-xl my-3 bg-black border-2 border-black flex items-center justify-center text-slate-400 font-code text-xs"></div>
+
+      <p id="modalDescription" class="text-xs text-slate-300 leading-relaxed mb-4"></p>
+
+      <div class="mb-5">
+        <h4 class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Peralatan</h4>
+        <div id="modalTags" class="flex flex-wrap gap-1.5"></div>
       </div>
 
-      <!-- Description -->
-      <p id="modalDescription" class="text-sm text-slate-300 leading-relaxed mb-6">
-        Detail project description here.
-      </p>
-
-      <!-- Tech Stack / Tools used -->
-      <div class="mb-6">
-        <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Tools &amp; Teknologi</h4>
-        <div id="modalTags" class="flex flex-wrap gap-2">
-          <!-- Injected via JS -->
-        </div>
-      </div>
-
-      <!-- Action Footer -->
-      <div class="flex items-center justify-end gap-3 pt-4 border-t border-white/10">
+      <div class="pt-3 border-t border-white/10 flex justify-end">
         <a id="modalWaChatBtn" href="#" target="_blank"
-           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-brand-dark text-xs font-bold transition-all">
-          <i class="fab fa-whatsapp text-sm"></i>
-          <span>Diskusikan Proyek Serupa</span>
+           class="comic-btn px-4 py-2 rounded-xl bg-emerald-400 text-black text-xs font-black">
+          Tanya Proyek Ini di WA
         </a>
       </div>
     </div>
   </div>
 
-  <!-- SCRIPT LOGIC -->
-<script src="main.js"></script>
-
+  <script src="main.js"></script>
 </body>
 </html>

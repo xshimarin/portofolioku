@@ -1,29 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=JetBrains+Mono:wght@500;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
 
-    /* Glassmorphism and Custom Styles */
-    .glass-card {
-      background: rgba(17, 24, 39, 0.7);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .glass-nav {
-      background: rgba(9, 13, 22, 0.82);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-    }
-    .text-glow {
-      text-shadow: 0 0 25px rgba(79, 172, 254, 0.45);
-    }
-    .custom-gradient-text {
-      background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #c084fc 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    /* Hide scrollbars for clean filter bars */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
+/* ================= 1. BASE TEMA TECH (DARK COMIC RETRO) ================= */
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #0b0f19;
+  color: #f8fafc;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+  overflow-x: hidden;
+}
+
+/* Panel Kartun Neo-Brutalist */
+.comic-card {
+  background: #111827;
+  border: 3px solid #00f2fe;
+  border-radius: 20px;
+  box-shadow: 6px 6px 0px #8b5cf6;
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.comic-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0px #ec4899;
+}
+
+/* Navigasi Panel */
+.comic-nav {
+  background: rgba(11, 15, 25, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 3px solid #00f2fe;
+  box-shadow: 0 4px 0px rgba(0, 242, 254, 0.35);
+}
+
+/* Tombol Cetak Timbul Komik */
+.comic-btn {
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0px #000000;
+  transition: all 0.15s ease-in-out;
+}
+
+.comic-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000000;
+}
+
+.comic-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #000000;
+}
+
+.font-comic {
+  font-family: 'Fredoka', cursive, sans-serif;
+}
+
+.font-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ================= 2. CREATIVE MODE (LIGHT POP-MANGA) ================= */
+body.mode-creative {
+  background-color: #fdf2f8;
+  color: #0f172a;
+  background-image: radial-gradient(#cbd5e1 2px, transparent 2px);
+  background-size: 18px 18px;
+}
+
+body.mode-creative .comic-nav {
+  background: #ffffff;
+  border-bottom: 3px solid #000000;
+  box-shadow: 0 5px 0px #f43f5e;
+}
+
+body.mode-creative .comic-nav a,
+body.mode-creative .comic-nav nav a,
+body.mode-creative #navBrandName {
+  color: #000000 !important;
+}
+
+body.mode-creative .sub-tagline {
+  color: #e11d48 !important;
+}
+
+body.mode-creative .comic-card {
+  background: #ffffff;
+  border: 3px solid #000000;
+  box-shadow: 6px 6px 0px #000000;
+  color: #0f172a;
+}
+
+body.mode-creative .comic-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0px #ec4899;
+}
+
+body.mode-creative h1,
+body.mode-creative h2,
+body.mode-creative h3 {
+  color: #000000;
+}
+
+body.mode-creative p,
+body.mode-creative span.text-slate-400,
+body.mode-creative div.text-slate-400 {
+  color: #334155;
+}
+
+/* ================= ANIMASI INTERAKTIF ================= */
+@keyframes float-playful {
+  0%, 100% { transform: translateY(0px) rotate(-4deg); }
+  50% { transform: translateY(-9px) rotate(-1deg); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0px) rotate(4deg); }
+  50% { transform: translateY(9px) rotate(1deg); }
+}
+
+@keyframes wiggle-badge {
+  0%, 100% { transform: rotate(-3deg) scale(1); }
+  50% { transform: rotate(3deg) scale(1.04); }
+}
+
+.animate-float-playful {
+  animation: float-playful 3.8s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 4.2s ease-in-out infinite;
+}
+
+.animate-wiggle {
+  animation: wiggle-badge 2.4s ease-in-out infinite;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.1em;
+  background-color: #00f2fe;
+  vertical-align: middle;
+  animation: blink 0.75s infinite;
+}
+
+body.mode-creative .typing-cursor {
+  background-color: #e11d48;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
